@@ -12,7 +12,7 @@ def web_scraping():
         driver = webdriver.Chrome()
         driver.get('https://www.waze.com/en/live-map/directions/tokol-magyarorszag?utm_source=website&utm_medium=\
         homepage&utm_campaign=iframe+module&to=place.ChIJHaMnPRvlQUcR8CYeDCnEAAQ&from=place.ChIJC0BjZOzdQUcR4NUeDCnEAAU')
-        time.sleep(4)  # eleg 4 is, fejlesztesnek lehet az ido annyi, amennyi ido alatt megnyilik rendesen az oldal
+        time.sleep(8)  # eleg 4 is, fejlesztesnek lehet az ido annyi, amennyi ido alatt megnyilik rendesen az oldal
         my_element = driver.find_element(By.CSS_SELECTOR, ".wm-routes-item-desktop.is-active")
         my_class = my_element.find_element(By.CLASS_NAME, "wm-routes-item-desktop__header")
         my_path = my_class.find_elements(By.XPATH, "./span")
