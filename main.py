@@ -4,7 +4,7 @@ import os
 import time
 import datetime
 
-# A program bizonyos idokozonkent, kinyeri a waze alkalmazasbol, az aktualis utazasi idot.
+# The app request travel time data in every 15 minutes from waze.com, and save them to a text file. (It works 24 hours.)
 def web_scraping():
     count = 0
     os.environ['PATH'] += r"C:/SeleniumDrivers"
@@ -12,7 +12,7 @@ def web_scraping():
         driver = webdriver.Chrome()
         driver.get('https://www.waze.com/en/live-map/directions/tokol-magyarorszag?utm_source=website&utm_medium=\
         homepage&utm_campaign=iframe+module&to=place.ChIJHaMnPRvlQUcR8CYeDCnEAAQ&from=place.ChIJC0BjZOzdQUcR4NUeDCnEAAU')
-        time.sleep(8)  # eleg 4 is, fejlesztesnek lehet az ido annyi, amennyi ido alatt megnyilik rendesen az oldal
+        time.sleep(8)  # 4 is enough on my pc, and connection, but I set 8 to be sure.
         my_element = driver.find_element(By.CSS_SELECTOR, ".wm-routes-item-desktop.is-active")
         my_class = my_element.find_element(By.CLASS_NAME, "wm-routes-item-desktop__header")
         my_path = my_class.find_elements(By.XPATH, "./span")
